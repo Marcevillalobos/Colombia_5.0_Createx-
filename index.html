@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colombia 5.0 & Createx</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVEGACIÓN GLOBAL ===== -->
+  <nav class="global-nav" id="globalNav">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="nav-logo-c50" id="navLogoC50">Colombia 5.0</span>
+        <span class="nav-sep">|</span>
+        <span class="nav-logo-ctx" id="navLogoCtx">Createx</span>
+      </div>
+      <div class="nav-links">
+        <button class="nav-btn active" id="btnC50" onclick="showPage('colombia')">
+          <span data-es="Colombia 5.0" data-en="Colombia 5.0">Colombia 5.0</span>
+        </button>
+        <button class="nav-btn" id="btnCtx" onclick="showPage('createx')">
+          <span data-es="Createx" data-en="Createx">Createx</span>
+        </button>
+        <button class="lang-toggle" id="langToggle" onclick="toggleLang()">
+          <span id="langLabel">EN</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================================================== -->
+  <!-- PÁGINA 1: COLOMBIA 5.0                                -->
+  <!-- ===================================================== -->
+  <div id="pageColombia" class="page active">
+
+    <!-- HERO -->
+    <section class="c50-hero">
+      <div class="c50-hero-bg"></div>
+      <div class="c50-hero-content">
+        <div class="c50-eyebrow" data-es="Evento Tecnológico · 8 de mayo de 2026" data-en="Technology Event · May 8, 2026">Evento Tecnológico · 8 de mayo de 2026</div>
+        <h1 class="c50-title">Colombia <span class="accent">5.0</span></h1>
+        <p class="c50-subtitle" data-es="Innovación, Transformación Digital e Inteligencia Artificial" data-en="Innovation, Digital Transformation and Artificial Intelligence">Innovación, Transformación Digital e Inteligencia Artificial</p>
+        <p class="c50-desc" data-es="Un espacio donde estudiantes, empresas y expertos comparten conocimiento sobre el desarrollo tecnológico del futuro." data-en="A space where students, companies and experts share knowledge about the technological development of the future.">Un espacio donde estudiantes, empresas y expertos comparten conocimiento sobre el desarrollo tecnológico del futuro.</p>
+        <a href="#conferencias" class="c50-cta" data-es="Ver Conferencias" data-en="View Conferences">Ver Conferencias</a>
+      </div>
+      <div class="c50-hero-imgs">
+        <div class="hero-img-card"><img src="Img/cl1.jpeg" alt="Colombia 5.0 imagen 1" /></div>
+        <div class="hero-img-card"><img src="Img/cl2.jpeg" alt="Colombia 5.0 imagen 2" /></div>
+        <div class="hero-img-card"><img src="Img/cl3.jpeg" alt="Colombia 5.0 imagen 3" /></div>
+      </div>
+    </section>
+
+    <!-- CONFERENCIAS -->
+    <section class="c50-section" id="conferencias">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-es="Programa Académico" data-en="Academic Program">Programa Académico</span>
+          <h2 class="section-title" data-es="Conferencias del Día" data-en="Day Conferences">Conferencias del Día</h2>
+        </div>
+
+        <!-- Conferencia 1 -->
+        <div class="conf-card">
+          <div class="conf-number">01</div>
+          <div class="conf-body">
+            <div class="conf-speaker-tag" data-es="Conferencista" data-en="Speaker">Conferencista</div>
+            <div class="conf-speaker-name">Andrés Felipe Pisso Tobar</div>
+            <h3 class="conf-title" data-es="Game UI Systems: de pantallas bonitas a interfaces que funcionan" data-en="Game UI Systems: from pretty screens to interfaces that work">Game UI Systems: de pantallas bonitas a interfaces que funcionan</h3>
+            <p class="conf-desc" data-es="La conferencia exploró la diferencia entre una interfaz atractiva y una interfaz funcional. Andrés Felipe Pisso Tobar demostró cómo el diseño de UI en videojuegos debe equilibrar la estética con la usabilidad, destacando que una pantalla visualmente impresionante pierde su valor si el jugador no puede navegar de manera intuitiva. Se abordó el impacto directo del UX en la experiencia del jugador, incluyendo aspectos de accesibilidad, retroalimentación visual y arquitectura de información dentro del entorno de juego." 
+              data-en="The conference explored the difference between an attractive interface and a functional one. Andrés Felipe Pisso Tobar demonstrated how UI design in video games must balance aesthetics with usability, emphasizing that a visually impressive screen loses value if the player cannot navigate it intuitively. The direct impact of UX on player experience was addressed, including accessibility, visual feedback, and information architecture within the game environment.">
+              La conferencia exploró la diferencia entre una interfaz atractiva y una interfaz funcional. Andrés Felipe Pisso Tobar demostró cómo el diseño de UI en videojuegos debe equilibrar la estética con la usabilidad, destacando que una pantalla visualmente impresionante pierde su valor si el jugador no puede navegar de manera intuitiva. Se abordó el impacto directo del UX en la experiencia del jugador, incluyendo aspectos de accesibilidad, retroalimentación visual y arquitectura de información dentro del entorno de juego.
+            </p>
+            <div class="conf-keywords">
+              <span class="kw-label" data-es="Palabras clave:" data-en="Keywords:">Palabras clave:</span>
+              <span class="kw-tag">UI</span>
+              <span class="kw-tag">UX</span>
+              <span class="kw-tag">Accessibility</span>
+              <span class="kw-tag">User Experience</span>
+              <span class="kw-tag">Navigation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conferencia 2 -->
+        <div class="conf-card">
+          <div class="conf-number">02</div>
+          <div class="conf-body">
+            <div class="conf-speaker-tag" data-es="Tema Central" data-en="Main Topic">Tema Central</div>
+            <div class="conf-speaker-name" data-es="Transformación empresarial con IA" data-en="Business transformation with AI">Transformación empresarial con IA</div>
+            <h3 class="conf-title" data-es="Inteligencia Artificial y Transformación Digital" data-en="Artificial Intelligence and Digital Transformation">Inteligencia Artificial y Transformación Digital</h3>
+            <p class="conf-desc" data-es="Esta conferencia presentó cómo la inteligencia artificial está redefiniendo la forma en que operan las empresas en todos los sectores. Se expusieron casos de uso reales de automatización de procesos, análisis predictivo y toma de decisiones basada en datos. Los ponentes explicaron que la transformación digital no es solo adoptar nuevas tecnologías, sino cambiar la cultura organizacional para aprovechar el potencial del machine learning, el análisis de grandes volúmenes de datos y la innovación continua como ventaja competitiva."
+              data-en="This conference presented how artificial intelligence is redefining how companies operate across all sectors. Real use cases of process automation, predictive analytics, and data-driven decision making were presented. Speakers explained that digital transformation is not only about adopting new technologies, but changing organizational culture to leverage machine learning potential, big data analysis, and continuous innovation as a competitive advantage.">
+              Esta conferencia presentó cómo la inteligencia artificial está redefiniendo la forma en que operan las empresas en todos los sectores. Se expusieron casos de uso reales de automatización de procesos, análisis predictivo y toma de decisiones basada en datos. Los ponentes explicaron que la transformación digital no es solo adoptar nuevas tecnologías, sino cambiar la cultura organizacional para aprovechar el potencial del machine learning, el análisis de grandes volúmenes de datos y la innovación continua como ventaja competitiva.
+            </p>
+            <div class="conf-keywords">
+              <span class="kw-label" data-es="Palabras clave:" data-en="Keywords:">Palabras clave:</span>
+              <span class="kw-tag">Artificial Intelligence</span>
+              <span class="kw-tag">Machine Learning</span>
+              <span class="kw-tag">Automation</span>
+              <span class="kw-tag">Data</span>
+              <span class="kw-tag">Innovation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSIÓN ÉTICA -->
+    <section class="c50-ethics">
+      <div class="container">
+        <div class="ethics-inner">
+          <div class="ethics-icon">⚖️</div>
+          <div class="ethics-text">
+            <h3 class="ethics-title" data-es="Conclusión y Reflexión Ética" data-en="Conclusion and Ethical Reflection">Conclusión y Reflexión Ética</h3>
+            <p data-es="La ética en la tecnología empresarial es fundamental para garantizar un uso responsable de la inteligencia artificial y el manejo de datos. Los desarrolladores tienen la responsabilidad de construir soluciones seguras, transparentes e inclusivas que beneficien a toda la sociedad. Colombia 5.0 nos recuerda que la innovación tecnológica debe ir siempre acompañada de principios éticos sólidos."
+               data-en="Ethics in business technology is fundamental to ensuring responsible use of artificial intelligence and data management. Developers have the responsibility to build safe, transparent, and inclusive solutions that benefit all of society. Colombia 5.0 reminds us that technological innovation must always be accompanied by strong ethical principles.">
+              La ética en la tecnología empresarial es fundamental para garantizar un uso responsable de la inteligencia artificial y el manejo de datos. Los desarrolladores tienen la responsabilidad de construir soluciones seguras, transparentes e inclusivas que beneficien a toda la sociedad. Colombia 5.0 nos recuerda que la innovación tecnológica debe ir siempre acompañada de principios éticos sólidos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GLOSARIO -->
+    <section class="c50-section" id="glosario">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-es="Términos Clave" data-en="Key Terms">Términos Clave</span>
+          <h2 class="section-title" data-es="Glosario Tecnológico" data-en="Technology Glossary">Glosario Tecnológico</h2>
+        </div>
+        <div class="glossary-search-wrap">
+          <input type="text" class="glossary-search" id="glossarySearch" 
+            data-placeholder-es="Buscar término..." 
+            data-placeholder-en="Search term..."
+            placeholder="Buscar término..." 
+            oninput="filterGlossary()" />
+        </div>
+        <div class="glossary-table-wrap">
+          <table class="glossary-table" id="glossaryTable">
+            <thead>
+              <tr>
+                <th data-es="Inglés" data-en="English">Inglés</th>
+                <th data-es="Español" data-en="Spanish">Español</th>
+                <th data-es="Definición" data-en="Definition">Definición</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>User Interface</td><td>Interfaz de Usuario</td><td data-es="Punto de interacción entre el usuario y el sistema digital." data-en="Point of interaction between the user and the digital system.">Punto de interacción entre el usuario y el sistema digital.</td></tr>
+              <tr><td>User Experience</td><td>Experiencia de Usuario</td><td data-es="Percepción y respuesta del usuario al usar un producto." data-en="User's perception and response when using a product.">Percepción y respuesta del usuario al usar un producto.</td></tr>
+              <tr><td>Accessibility</td><td>Accesibilidad</td><td data-es="Diseño que permite el uso por personas con diversas capacidades." data-en="Design that allows use by people with diverse abilities.">Diseño que permite el uso por personas con diversas capacidades.</td></tr>
+              <tr><td>Artificial Intelligence</td><td>Inteligencia Artificial</td><td data-es="Simulación de procesos de inteligencia humana por sistemas informáticos." data-en="Simulation of human intelligence processes by computer systems.">Simulación de procesos de inteligencia humana por sistemas informáticos.</td></tr>
+              <tr><td>Machine Learning</td><td>Aprendizaje Automático</td><td data-es="Rama de la IA que permite a los sistemas aprender de los datos." data-en="Branch of AI that allows systems to learn from data.">Rama de la IA que permite a los sistemas aprender de los datos.</td></tr>
+              <tr><td>Cloud Computing</td><td>Computación en la Nube</td><td data-es="Entrega de servicios de computación a través de Internet." data-en="Delivery of computing services over the Internet.">Entrega de servicios de computación a través de Internet.</td></tr>
+              <tr><td>Cybersecurity</td><td>Ciberseguridad</td><td data-es="Protección de sistemas, redes y programas contra ataques digitales." data-en="Protection of systems, networks and programs from digital attacks.">Protección de sistemas, redes y programas contra ataques digitales.</td></tr>
+              <tr><td>Database</td><td>Base de Datos</td><td data-es="Colección organizada de información almacenada y accesible electrónicamente." data-en="Organized collection of information stored and accessible electronically.">Colección organizada de información almacenada y accesible electrónicamente.</td></tr>
+              <tr><td>Software</td><td>Software</td><td data-es="Conjunto de instrucciones y programas que operan en una computadora." data-en="Set of instructions and programs that operate on a computer.">Conjunto de instrucciones y programas que operan en una computadora.</td></tr>
+              <tr><td>Hardware</td><td>Hardware</td><td data-es="Componentes físicos de un sistema informático." data-en="Physical components of a computer system.">Componentes físicos de un sistema informático.</td></tr>
+              <tr><td>Network</td><td>Red</td><td data-es="Conjunto de dispositivos conectados que comparten recursos e información." data-en="Set of connected devices sharing resources and information.">Conjunto de dispositivos conectados que comparten recursos e información.</td></tr>
+              <tr><td>Server</td><td>Servidor</td><td data-es="Computadora que provee servicios o recursos a otros dispositivos." data-en="Computer that provides services or resources to other devices.">Computadora que provee servicios o recursos a otros dispositivos.</td></tr>
+              <tr><td>Client</td><td>Cliente</td><td data-es="Dispositivo o programa que solicita servicios a un servidor." data-en="Device or program that requests services from a server.">Dispositivo o programa que solicita servicios a un servidor.</td></tr>
+              <tr><td>Algorithm</td><td>Algoritmo</td><td data-es="Conjunto de instrucciones para resolver un problema paso a paso." data-en="Set of instructions to solve a problem step by step.">Conjunto de instrucciones para resolver un problema paso a paso.</td></tr>
+              <tr><td>Automation</td><td>Automatización</td><td data-es="Ejecución automática de tareas con mínima intervención humana." data-en="Automatic execution of tasks with minimal human intervention.">Ejecución automática de tareas con mínima intervención humana.</td></tr>
+              <tr><td>Big Data</td><td>Grandes Datos</td><td data-es="Conjuntos de datos masivos que requieren herramientas especializadas." data-en="Massive data sets requiring specialized tools to process.">Conjuntos de datos masivos que requieren herramientas especializadas.</td></tr>
+              <tr><td>API</td><td>Interfaz de Programación</td><td data-es="Conjunto de reglas que permiten la comunicación entre sistemas de software." data-en="Set of rules enabling communication between software systems.">Conjunto de reglas que permiten la comunicación entre sistemas de software.</td></tr>
+              <tr><td>Frontend</td><td>Frontend</td><td data-es="Capa visible de una aplicación con la que interactúa el usuario." data-en="Visible layer of an application with which the user interacts.">Capa visible de una aplicación con la que interactúa el usuario.</td></tr>
+              <tr><td>Backend</td><td>Backend</td><td data-es="Lógica interna y procesamiento de datos de una aplicación." data-en="Internal logic and data processing of an application.">Lógica interna y procesamiento de datos de una aplicación.</td></tr>
+              <tr><td>Framework</td><td>Framework</td><td data-es="Estructura predefinida para facilitar el desarrollo de software." data-en="Predefined structure to facilitate software development.">Estructura predefinida para facilitar el desarrollo de software.</td></tr>
+              <tr><td>HTML</td><td>HTML</td><td data-es="Lenguaje de marcado estándar para crear páginas web." data-en="Standard markup language for creating web pages.">Lenguaje de marcado estándar para crear páginas web.</td></tr>
+              <tr><td>CSS</td><td>CSS</td><td data-es="Lenguaje de estilos para definir la presentación visual de páginas web." data-en="Style language for defining the visual presentation of web pages.">Lenguaje de estilos para definir la presentación visual de páginas web.</td></tr>
+              <tr><td>JavaScript</td><td>JavaScript</td><td data-es="Lenguaje de programación que permite dinamismo en páginas web." data-en="Programming language that enables dynamism in web pages.">Lenguaje de programación que permite dinamismo en páginas web.</td></tr>
+              <tr><td>Responsive Design</td><td>Diseño Responsivo</td><td data-es="Diseño web que se adapta a diferentes tamaños de pantalla." data-en="Web design that adapts to different screen sizes.">Diseño web que se adapta a diferentes tamaños de pantalla.</td></tr>
+              <tr><td>Gaming</td><td>Videojuegos</td><td data-es="Juegos digitales interactivos en plataformas electrónicas." data-en="Interactive digital games on electronic platforms.">Juegos digitales interactivos en plataformas electrónicas.</td></tr>
+              <tr><td>UX Design</td><td>Diseño UX</td><td data-es="Proceso de diseño centrado en la experiencia del usuario." data-en="Design process centered on the user's experience.">Proceso de diseño centrado en la experiencia del usuario.</td></tr>
+              <tr><td>UI Design</td><td>Diseño UI</td><td data-es="Diseño visual de interfaces digitales interactivas." data-en="Visual design of interactive digital interfaces.">Diseño visual de interfaces digitales interactivas.</td></tr>
+              <tr><td>Innovation</td><td>Innovación</td><td data-es="Introducción de nuevas ideas, métodos o productos al mercado." data-en="Introduction of new ideas, methods or products to the market.">Introducción de nuevas ideas, métodos o productos al mercado.</td></tr>
+              <tr><td>Data Analytics</td><td>Análisis de Datos</td><td data-es="Interpretación de datos para obtener información útil y tomar decisiones." data-en="Interpretation of data to obtain useful information and make decisions.">Interpretación de datos para obtener información útil y tomar decisiones.</td></tr>
+              <tr><td>Digital Transformation</td><td>Transformación Digital</td><td data-es="Adopción de tecnología digital para transformar procesos y cultura empresarial." data-en="Adoption of digital technology to transform business processes and culture.">Adopción de tecnología digital para transformar procesos y cultura empresarial.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER Colombia 5.0 -->
+    <footer class="c50-footer">
+      <p data-es="© 2026 Colombia 5.0 · Evento Tecnológico · 8 de mayo de 2026" data-en="© 2026 Colombia 5.0 · Technology Event · May 8, 2026">© 2026 Colombia 5.0 · Evento Tecnológico · 8 de mayo de 2026</p>
+    </footer>
+
+  </div><!-- /pageColombia -->
+
+
+  <!-- ===================================================== -->
+  <!-- PÁGINA 2: CREATEX                                     -->
+  <!-- ===================================================== -->
+  <div id="pageCreatex" class="page">
+
+    <!-- HERO CREATEX -->
+    <section class="ctx-hero">
+      <div class="ctx-hero-overlay"></div>
+      <div class="ctx-hero-content">
+        <div class="ctx-eyebrow" data-es="Salón de la Industria Textil · Corferias · 12–14 Mayo 2026" data-en="Textile Industry Fair · Corferias · May 12–14, 2026">Salón de la Industria Textil · Corferias · 12–14 Mayo 2026</div>
+        <h1 class="ctx-title">Createx <span class="ctx-accent">2026</span></h1>
+        <p class="ctx-subtitle" data-es="Moda, Tecnología e Innovación Textil en Colombia" data-en="Fashion, Technology and Textile Innovation in Colombia">Moda, Tecnología e Innovación Textil en Colombia</p>
+        <div class="ctx-stats">
+          <div class="ctx-stat"><span class="ctx-stat-num">230+</span><span class="ctx-stat-label" data-es="Expositores" data-en="Exhibitors">Expositores</span></div>
+          <div class="ctx-stat"><span class="ctx-stat-num">8.100+</span><span class="ctx-stat-label" data-es="Asistentes" data-en="Attendees">Asistentes</span></div>
+          <div class="ctx-stat"><span class="ctx-stat-num">8ª</span><span class="ctx-stat-label" data-es="Edición" data-en="Edition">Edición</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ¿QUÉ ES CREATEX? -->
+    <section class="ctx-section ctx-about">
+      <div class="container">
+        <div class="ctx-about-grid">
+          <div class="ctx-about-text">
+            <span class="ctx-section-tag" data-es="Sobre el Evento" data-en="About the Event">Sobre el Evento</span>
+            <h2 class="ctx-section-title" data-es="¿Qué es Createx?" data-en="What is Createx?">¿Qué es Createx?</h2>
+            <p data-es="Createx (Salón de la Industria Textil para la Confección) es una de las ferias más importantes de Colombia para el sector de textiles, confección, moda, maquinaria, tecnología e innovación. Se realiza en Corferias y reúne empresas, diseñadores, fabricantes, emprendedores, compradores y estudiantes."
+               data-en="Createx (Textile Industry Fair for Garment Manufacturing) is one of Colombia's most important trade fairs for the textiles, clothing, fashion, machinery, technology and innovation sector. It takes place at Corferias and brings together companies, designers, manufacturers, entrepreneurs, buyers and students.">
+              Createx (Salón de la Industria Textil para la Confección) es una de las ferias más importantes de Colombia para el sector de textiles, confección, moda, maquinaria, tecnología e innovación. Se realiza en Corferias y reúne empresas, diseñadores, fabricantes, emprendedores, compradores y estudiantes.
+            </p>
+            <p data-es="El objetivo principal es conectar toda la cadena de producción de una prenda: desde la materia prima hasta el producto terminado, promoviendo la innovación, la sostenibilidad y la transformación tecnológica del sector."
+               data-en="The main goal is to connect the entire garment production chain: from raw materials to the finished product, promoting innovation, sustainability and technological transformation in the sector.">
+              El objetivo principal es conectar toda la cadena de producción de una prenda: desde la materia prima hasta el producto terminado, promoviendo la innovación, la sostenibilidad y la transformación tecnológica del sector.
+            </p>
+            <div class="ctx-organizers">
+              <span class="ctx-org-label" data-es="Organizado por:" data-en="Organized by:">Organizado por:</span>
+              <div class="ctx-org-list">
+                <span class="ctx-org-item">🏛️ <span data-es="Cámara Colombiana de la Confección y Afines" data-en="Colombian Chamber of Clothing and Related Industries">Cámara Colombiana de la Confección y Afines</span></span>
+                <span class="ctx-org-item">🏟️ Corferias</span>
+              </div>
+            </div>
+          </div>
+          <div class="ctx-about-areas">
+            <h3 class="ctx-areas-title" data-es="Áreas del Evento" data-en="Event Areas">Áreas del Evento</h3>
+            <div class="ctx-area-list">
+              <div class="ctx-area-item"><span class="ctx-area-icon">🧵</span><div><strong data-es="Industria Textil" data-en="Textile Industry">Industria Textil</strong><p data-es="Telas, fibras, materiales y nuevos acabados" data-en="Fabrics, fibers, materials and new finishes">Telas, fibras, materiales y nuevos acabados</p></div></div>
+              <div class="ctx-area-item"><span class="ctx-area-icon">✂️</span><div><strong data-es="Confección" data-en="Garment Manufacturing">Confección</strong><p data-es="Corte, costura y producción de prendas" data-en="Cutting, sewing and garment production">Corte, costura y producción de prendas</p></div></div>
+              <div class="ctx-area-item"><span class="ctx-area-icon">⚙️</span><div><strong data-es="Maquinaria y Tecnología" data-en="Machinery and Technology">Maquinaria y Tecnología</strong><p data-es="Máquinas industriales y equipos automatizados" data-en="Industrial machines and automated equipment">Máquinas industriales y equipos automatizados</p></div></div>
+              <div class="ctx-area-item"><span class="ctx-area-icon">🎓</span><div><strong data-es="Agenda Académica" data-en="Academic Agenda">Agenda Académica</strong><p data-es="Conferencias sobre tendencias y moda sostenible" data-en="Conferences on trends and sustainable fashion">Conferencias sobre tendencias y moda sostenible</p></div></div>
+              <div class="ctx-area-item"><span class="ctx-area-icon">👗</span><div><strong data-es="Pasarelas y Experiencias" data-en="Runways and Experiences">Pasarelas y Experiencias</strong><p data-es="Presentaciones de moda y demostraciones en vivo" data-en="Fashion presentations and live demonstrations">Presentaciones de moda y demostraciones en vivo</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PASARELA MATRIA -->
+    <section class="ctx-matria">
+      <div class="container">
+        <div class="ctx-matria-inner">
+          <div class="ctx-matria-text">
+            <span class="ctx-section-tag light" data-es="Experiencia Artística" data-en="Artistic Experience">Experiencia Artística</span>
+            <h2 class="ctx-matria-title">Pasarela <em>Matria</em></h2>
+            <p data-es='El punto culminante de Createx 2026 fue la pasarela "Matria", una experiencia única que fusionó moda sostenible con expresión artística. En medio de los desfiles de prendas elaboradas con materiales ecoamigables, se presentó una obra de teatro que narró la historia de las mujeres en la industria textil colombiana, conectando el pasado artesanal con el futuro tecnológico de la moda.'
+               data-en='The highlight of Createx 2026 was the "Matria" runway, a unique experience that fused sustainable fashion with artistic expression. During the fashion shows featuring garments made with eco-friendly materials, a theater play was presented that narrated the story of women in the Colombian textile industry, connecting the artisanal past with the technological future of fashion.'>
+              El punto culminante de Createx 2026 fue la pasarela "Matria", una experiencia única que fusionó moda sostenible con expresión artística. En medio de los desfiles de prendas elaboradas con materiales ecoamigables, se presentó una obra de teatro que narró la historia de las mujeres en la industria textil colombiana, conectando el pasado artesanal con el futuro tecnológico de la moda.
+            </p>
+            <div class="ctx-theme-tags">
+              <span class="ctx-theme-tag" data-es="Innovación" data-en="Innovation">Innovación</span>
+              <span class="ctx-theme-tag" data-es="Sostenibilidad" data-en="Sustainability">Sostenibilidad</span>
+              <span class="ctx-theme-tag" data-es="Economía Circular" data-en="Circular Economy">Economía Circular</span>
+              <span class="ctx-theme-tag" data-es="Moda Responsable" data-en="Responsible Fashion">Moda Responsable</span>
+            </div>
+          </div>
+          <div class="ctx-matria-badge">
+            <div class="matria-circle">
+              <span class="matria-label" data-es="TEMA CENTRAL" data-en="MAIN THEME">TEMA CENTRAL</span>
+              <span class="matria-word">Matria</span>
+              <span class="matria-year">2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA MULTIMEDIA -->
+    <section class="ctx-section ctx-gallery-section">
+      <div class="container">
+        <div class="section-header-ctx">
+          <span class="ctx-section-tag" data-es="Galería Multimedia" data-en="Multimedia Gallery">Galería Multimedia</span>
+          <h2 class="ctx-section-title" data-es="Momentos del Evento" data-en="Event Highlights">Momentos del Evento</h2>
+        </div>
+        <div class="ctx-gallery">
+          <div class="ctx-gallery-item large" onclick="openLightbox('Img/cl4.jpeg')"><img src="Img/cl4.jpeg" alt="Createx 2026 - Imagen 1" /><div class="gallery-overlay"><span data-es="Ver imagen" data-en="View image">Ver imagen</span></div></div>
+          <div class="ctx-gallery-item" onclick="openLightbox('Img/cl5.jpeg')"><img src="Img/cl5.jpeg" alt="Createx 2026 - Imagen 2" /><div class="gallery-overlay"><span data-es="Ver imagen" data-en="View image">Ver imagen</span></div></div>
+          <div class="ctx-gallery-item" onclick="openLightbox('Img/cl6.jpeg')"><img src="Img/cl6.jpeg" alt="Createx 2026 - Imagen 3" /><div class="gallery-overlay"><span data-es="Ver imagen" data-en="View image">Ver imagen</span></div></div>
+          <div class="ctx-gallery-item" onclick="openLightbox('Img/cl7.jpeg')"><img src="Img/cl7.jpeg" alt="Createx 2026 - Imagen 4" /><div class="gallery-overlay"><span data-es="Ver imagen" data-en="View image">Ver imagen</span></div></div>
+          <div class="ctx-gallery-item" onclick="openLightbox('Img/cl8.jpeg')"><img src="Img/cl8.jpeg" alt="Createx 2026 - Imagen 5" /><div class="gallery-overlay"><span data-es="Ver imagen" data-en="View image">Ver imagen</span></div></div>
+          <div class="ctx-gallery-item large" onclick="openLightbox('Img/cl9.jpeg')"><img src="Img/cl9.jpeg" alt="Createx 2026 - Imagen 6" /><div class="gallery-overlay"><span data-es="Ver imagen" data-en="View image">Ver imagen</span></div></div>
+          <div class="ctx-gallery-item" onclick="openLightbox('Img/cl10.jpeg')"><img src="Img/cl10.jpeg" alt="Createx 2026 - Imagen 7" /><div class="gallery-overlay"><span data-es="Ver imagen" data-en="View image">Ver imagen</span></div></div>
+          <div class="ctx-gallery-item" onclick="openLightbox('Img/cl11.jpeg')"><img src="Img/cl11.jpeg" alt="Createx 2026 - Imagen 8" /><div class="gallery-overlay"><span data-es="Ver imagen" data-en="View image">Ver imagen</span></div></div>
+          <div class="ctx-gallery-item" onclick="openLightbox('Img/cl12.jpeg')"><img src="Img/cl12.jpeg" alt="Createx 2026 - Imagen 9" /><div class="gallery-overlay"><span data-es="Ver imagen" data-en="View image">Ver imagen</span></div></div>
+          <div class="ctx-gallery-item" onclick="openLightbox('Img/cl13.jpeg')"><img src="Img/cl13.jpeg" alt="Createx 2026 - Imagen 10" /><div class="gallery-overlay"><span data-es="Ver imagen" data-en="View image">Ver imagen</span></div></div>
+          <div class="ctx-gallery-item wide" onclick="openLightbox('Img/cl14.jpeg')"><img src="Img/cl14.jpeg" alt="Createx 2026 - Imagen 11" /><div class="gallery-overlay"><span data-es="Ver imagen" data-en="View image">Ver imagen</span></div></div>
+        </div>
+
+        <!-- VIDEO -->
+        <div class="ctx-video-wrap">
+          <h3 class="ctx-video-title" data-es="Video del Evento" data-en="Event Video">Video del Evento</h3>
+          <div class="ctx-video-container">
+            <video controls poster="" preload="metadata">
+              <source src="Img/video1.mp4" type="video/mp4" />
+              <span data-es="Tu navegador no soporta el elemento de video." data-en="Your browser does not support the video element.">Tu navegador no soporta el elemento de video.</span>
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSIÓN CREATEX -->
+    <section class="ctx-conclusion">
+      <div class="container">
+        <div class="ctx-conclusion-inner">
+          <h2 class="ctx-conclusion-title" data-es="Createx: Más que una Feria de Moda" data-en="Createx: More than a Fashion Fair">Createx: Más que una Feria de Moda</h2>
+          <p data-es="Createx no es solo una feria de ropa; es un espacio donde se conecta toda la industria textil y de confección. Allí se presentan nuevas tecnologías, tendencias sostenibles y oportunidades de negocio que ayudan al crecimiento del sector moda en Colombia y Latinoamérica. Con más de 51 empresas bogotanas participantes y expectativas de negocio superiores a USD 1 millón, Createx 2026 consolidó su posición como el evento más importante del sector textil en Colombia."
+             data-en="Createx is not just a clothing fair; it is a space where the entire textile and garment industry connects. New technologies, sustainable trends and business opportunities are presented there, helping the fashion sector grow in Colombia and Latin America. With more than 51 Bogotá companies participating and business expectations exceeding USD 1 million, Createx 2026 consolidated its position as the most important event in Colombia's textile sector.">
+            Createx no es solo una feria de ropa; es un espacio donde se conecta toda la industria textil y de confección. Allí se presentan nuevas tecnologías, tendencias sostenibles y oportunidades de negocio que ayudan al crecimiento del sector moda en Colombia y Latinoamérica. Con más de 51 empresas bogotanas participantes y expectativas de negocio superiores a USD 1 millón, Createx 2026 consolidó su posición como el evento más importante del sector textil en Colombia.
+          </p>
+          <div class="ctx-conclusion-points">
+            <div class="ctx-point"><span>✔️</span><span data-es="Impulsa emprendimientos de moda" data-en="Boosts fashion entrepreneurship">Impulsa emprendimientos de moda</span></div>
+            <div class="ctx-point"><span>✔️</span><span data-es="Genera contactos y oportunidades comerciales" data-en="Generates contacts and business opportunities">Genera contactos y oportunidades comerciales</span></div>
+            <div class="ctx-point"><span>✔️</span><span data-es="Muestra innovación tecnológica" data-en="Showcases technological innovation">Muestra innovación tecnológica</span></div>
+            <div class="ctx-point"><span>✔️</span><span data-es="Fortalece empresas nacionales" data-en="Strengthens national companies">Fortalece empresas nacionales</span></div>
+            <div class="ctx-point"><span>✔️</span><span data-es="Crea empleo y crecimiento económico" data-en="Creates employment and economic growth">Crea empleo y crecimiento económico</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER CREATEX -->
+    <footer class="ctx-footer">
+      <p data-es="© 2026 Createx · Salón de la Industria Textil · Corferias, Bogotá" data-en="© 2026 Createx · Textile Industry Fair · Corferias, Bogotá">© 2026 Createx · Salón de la Industria Textil · Corferias, Bogotá</p>
+    </footer>
+
+  </div><!-- /pageCreatex -->
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="Imagen ampliada" />
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

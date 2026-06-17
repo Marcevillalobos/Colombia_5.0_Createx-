@@ -1,0 +1,1159 @@
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Colombia 5.0 palette */
+  --c50-bg:       #0A1628;
+  --c50-surface:  #0F1F3D;
+  --c50-card:     #13263D;
+  --c50-cyan:     #00D4FF;
+  --c50-cyan2:    #0099CC;
+  --c50-white:    #F0F8FF;
+  --c50-muted:    #8BA5C4;
+  --c50-border:   #1E3A5F;
+  --c50-glow:     rgba(0, 212, 255, 0.15);
+
+  /* Createx palette */
+  --ctx-bg:       #111111;
+  --ctx-surface:  #1A1A1A;
+  --ctx-card:     #222222;
+  --ctx-gold:     #C9A84C;
+  --ctx-gold2:    #A88830;
+  --ctx-rose:     #E8D5C4;
+  --ctx-bone:     #FAF7F2;
+  --ctx-muted:    #888888;
+  --ctx-border:   #2A2A2A;
+
+  /* Shared */
+  --radius:    12px;
+  --radius-lg: 20px;
+  --shadow:    0 4px 24px rgba(0,0,0,0.35);
+  --trans:     0.3s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--c50-bg);
+  color: var(--c50-white);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   GLOBAL NAV
+   ============================================================ */
+.global-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 22, 40, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--c50-border);
+  transition: background var(--trans);
+}
+
+.global-nav.createx-mode {
+  background: rgba(17, 17, 17, 0.95);
+  border-bottom-color: var(--ctx-border);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+}
+
+.nav-logo-c50 { color: var(--c50-cyan); }
+.nav-logo-ctx { color: var(--ctx-gold); }
+.nav-sep { color: #444; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--c50-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--trans);
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background: var(--c50-glow);
+  border-color: var(--c50-cyan);
+  color: var(--c50-cyan);
+}
+
+.createx-mode .nav-btn:hover,
+.createx-mode .nav-btn.active {
+  background: rgba(201, 168, 76, 0.12);
+  border-color: var(--ctx-gold);
+  color: var(--ctx-gold);
+}
+
+.lang-toggle {
+  background: var(--c50-cyan);
+  border: none;
+  color: var(--c50-bg);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--trans);
+}
+
+.lang-toggle:hover { background: var(--c50-cyan2); }
+
+.createx-mode .lang-toggle {
+  background: var(--ctx-gold);
+  color: #111;
+}
+
+.createx-mode .lang-toggle:hover { background: var(--ctx-gold2); }
+
+/* ============================================================
+   PAGE VISIBILITY
+   ============================================================ */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ============================================================
+   COLOMBIA 5.0 — HERO
+   ============================================================ */
+.c50-hero {
+  position: relative;
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+  padding: 100px 60px 80px;
+  overflow: hidden;
+}
+
+.c50-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(0,212,255,0.08) 0%, transparent 70%),
+    linear-gradient(135deg, #0A1628 0%, #0D1E3A 100%);
+}
+
+.c50-hero-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,212,255,0.06) 0%, transparent 70%);
+  animation: pulse 6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.c50-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.c50-eyebrow {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c50-cyan);
+  margin-bottom: 16px;
+}
+
+.c50-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--c50-white);
+  margin-bottom: 16px;
+}
+
+.c50-title .accent { color: var(--c50-cyan); }
+
+.c50-subtitle {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--c50-muted);
+  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+}
+
+.c50-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--c50-muted);
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.c50-cta {
+  display: inline-block;
+  background: var(--c50-cyan);
+  color: var(--c50-bg);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all var(--trans);
+  box-shadow: 0 0 24px rgba(0,212,255,0.3);
+}
+
+.c50-cta:hover {
+  background: var(--c50-cyan2);
+  box-shadow: 0 0 32px rgba(0,212,255,0.5);
+  transform: translateY(-2px);
+}
+
+/* Hero images */
+.c50-hero-imgs {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.hero-img-card {
+  width: 100%;
+  max-width: 420px;
+  height: 200px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--c50-border);
+  box-shadow: var(--shadow);
+  transition: transform var(--trans), box-shadow var(--trans);
+}
+
+.hero-img-card:nth-child(2) { transform: translateX(20px); }
+.hero-img-card:nth-child(3) { transform: translateX(-10px); }
+
+.hero-img-card:hover {
+  transform: translateX(0) translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,212,255,0.2);
+}
+
+/* ============================================================
+   COLOMBIA 5.0 — SECTIONS
+   ============================================================ */
+.c50-section {
+  padding: 80px 0;
+  background: var(--c50-bg);
+}
+
+.c50-section:nth-child(even) { background: var(--c50-surface); }
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c50-cyan);
+  background: var(--c50-glow);
+  border: 1px solid rgba(0,212,255,0.2);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--c50-white);
+  letter-spacing: -0.01em;
+}
+
+/* Conference Cards */
+.conf-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  background: var(--c50-card);
+  border: 1px solid var(--c50-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--trans), box-shadow var(--trans);
+}
+
+.conf-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--c50-cyan), transparent);
+  border-radius: 3px 0 0 3px;
+}
+
+.conf-card:hover {
+  border-color: rgba(0,212,255,0.3);
+  box-shadow: 0 8px 32px rgba(0,212,255,0.1);
+}
+
+.conf-number {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: rgba(0,212,255,0.15);
+  line-height: 1;
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.conf-speaker-tag {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c50-cyan);
+  margin-bottom: 4px;
+}
+
+.conf-speaker-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--c50-white);
+  margin-bottom: 12px;
+}
+
+.conf-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--c50-white);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.conf-desc {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--c50-muted);
+  margin-bottom: 24px;
+}
+
+.conf-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.kw-label {
+  font-size: 0.8rem;
+  color: var(--c50-muted);
+  margin-right: 4px;
+}
+
+.kw-tag {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--c50-cyan);
+  background: rgba(0,212,255,0.08);
+  border: 1px solid rgba(0,212,255,0.2);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* Ethics Section */
+.c50-ethics {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #0A1628, #0D1E40);
+  border-top: 1px solid var(--c50-border);
+  border-bottom: 1px solid var(--c50-border);
+}
+
+.ethics-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--c50-card);
+  border: 1px solid var(--c50-border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+}
+
+.ethics-icon { font-size: 2.5rem; flex-shrink: 0; }
+
+.ethics-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--c50-white);
+  margin-bottom: 12px;
+}
+
+.ethics-text p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--c50-muted);
+}
+
+/* ============================================================
+   GLOSARIO
+   ============================================================ */
+.glossary-search-wrap {
+  max-width: 480px;
+  margin: 0 auto 32px;
+}
+
+.glossary-search {
+  width: 100%;
+  background: var(--c50-card);
+  border: 1px solid var(--c50-border);
+  border-radius: 8px;
+  color: var(--c50-white);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  padding: 12px 18px;
+  outline: none;
+  transition: border-color var(--trans);
+}
+
+.glossary-search:focus {
+  border-color: var(--c50-cyan);
+  box-shadow: 0 0 0 3px var(--c50-glow);
+}
+
+.glossary-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--c50-border);
+}
+
+.glossary-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.glossary-table thead {
+  background: var(--c50-card);
+}
+
+.glossary-table th {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c50-cyan);
+  padding: 14px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--c50-border);
+}
+
+.glossary-table tbody tr {
+  border-bottom: 1px solid rgba(30,58,95,0.5);
+  transition: background var(--trans);
+}
+
+.glossary-table tbody tr:hover { background: var(--c50-card); }
+
+.glossary-table td {
+  font-size: 0.875rem;
+  color: var(--c50-muted);
+  padding: 12px 20px;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.glossary-table td:first-child {
+  color: var(--c50-white);
+  font-weight: 500;
+}
+
+/* ============================================================
+   COLOMBIA 5.0 — FOOTER
+   ============================================================ */
+.c50-footer {
+  background: #060F1E;
+  border-top: 1px solid var(--c50-border);
+  padding: 24px;
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  color: var(--c50-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   CREATEX — BODY OVERRIDE
+   ============================================================ */
+#pageCreatex {
+  background: var(--ctx-bg);
+  color: var(--ctx-bone);
+  font-family: 'Lato', sans-serif;
+}
+
+/* ============================================================
+   CREATEX — HERO
+   ============================================================ */
+.ctx-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 100px 60px 80px;
+  background:
+    linear-gradient(to top, rgba(17,17,17,0.95) 0%, rgba(17,17,17,0.4) 60%, transparent 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231A1A1A"/><path d="M0 50 Q25 30 50 50 Q75 70 100 50" stroke="%23C9A84C" stroke-width="0.3" fill="none" opacity="0.3"/></svg>');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.ctx-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 30% 60%, rgba(201,168,76,0.06) 0%, transparent 70%),
+    linear-gradient(135deg, #111 0%, #1A1108 100%);
+}
+
+.ctx-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.ctx-eyebrow {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ctx-gold);
+  margin-bottom: 16px;
+}
+
+.ctx-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ctx-bone);
+  margin-bottom: 16px;
+}
+
+.ctx-accent { color: var(--ctx-gold); }
+
+.ctx-subtitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: rgba(232,213,196,0.7);
+  letter-spacing: 0.05em;
+  margin-bottom: 40px;
+}
+
+.ctx-stats {
+  display: flex;
+  gap: 40px;
+}
+
+.ctx-stat { display: flex; flex-direction: column; }
+
+.ctx-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ctx-gold);
+  line-height: 1;
+}
+
+.ctx-stat-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(232,213,196,0.5);
+  margin-top: 4px;
+}
+
+/* ============================================================
+   CREATEX — SECTIONS
+   ============================================================ */
+.ctx-section {
+  padding: 80px 0;
+  background: var(--ctx-bg);
+}
+
+.ctx-section-tag {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ctx-gold);
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.ctx-section-tag.light {
+  color: rgba(232,213,196,0.6);
+  background: rgba(232,213,196,0.05);
+  border-color: rgba(232,213,196,0.1);
+}
+
+.ctx-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--ctx-bone);
+  letter-spacing: -0.01em;
+}
+
+.section-header-ctx {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* About Grid */
+.ctx-about { background: var(--ctx-surface); }
+
+.ctx-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.ctx-about-text { display: flex; flex-direction: column; gap: 8px; }
+
+.ctx-about-text p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(232,213,196,0.7);
+  margin-bottom: 12px;
+}
+
+.ctx-organizers { margin-top: 16px; }
+
+.ctx-org-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ctx-gold);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.ctx-org-list { display: flex; flex-direction: column; gap: 8px; }
+
+.ctx-org-item {
+  font-size: 0.9rem;
+  color: rgba(232,213,196,0.7);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ctx-areas-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ctx-bone);
+  margin-bottom: 20px;
+}
+
+.ctx-area-list { display: flex; flex-direction: column; gap: 16px; }
+
+.ctx-area-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--ctx-card);
+  border: 1px solid var(--ctx-border);
+  border-radius: var(--radius);
+  padding: 16px;
+  transition: border-color var(--trans);
+}
+
+.ctx-area-item:hover { border-color: rgba(201,168,76,0.3); }
+
+.ctx-area-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+
+.ctx-area-item strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ctx-bone);
+  margin-bottom: 4px;
+}
+
+.ctx-area-item p {
+  font-size: 0.82rem;
+  color: var(--ctx-muted);
+  line-height: 1.4;
+}
+
+/* ============================================================
+   CREATEX — MATRIA
+   ============================================================ */
+.ctx-matria {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #0E0B03 0%, #1A1204 50%, #111 100%);
+  border-top: 1px solid var(--ctx-border);
+  border-bottom: 1px solid var(--ctx-border);
+}
+
+.ctx-matria-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 64px;
+  align-items: center;
+}
+
+.ctx-matria-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--ctx-bone);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.ctx-matria-title em {
+  color: var(--ctx-gold);
+  font-style: italic;
+}
+
+.ctx-matria-text p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(232,213,196,0.7);
+  margin-bottom: 28px;
+}
+
+.ctx-theme-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ctx-theme-tag {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ctx-gold);
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.25);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.ctx-matria-badge { flex-shrink: 0; }
+
+.matria-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px solid var(--ctx-gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 0 60px rgba(201,168,76,0.15), inset 0 0 40px rgba(201,168,76,0.05);
+  animation: rotate-border 20s linear infinite;
+  position: relative;
+}
+
+@keyframes rotate-border {
+  from { box-shadow: 0 0 60px rgba(201,168,76,0.15), inset 0 0 40px rgba(201,168,76,0.05); }
+  50%  { box-shadow: 0 0 80px rgba(201,168,76,0.25), inset 0 0 60px rgba(201,168,76,0.08); }
+  to   { box-shadow: 0 0 60px rgba(201,168,76,0.15), inset 0 0 40px rgba(201,168,76,0.05); }
+}
+
+.matria-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--ctx-gold);
+  margin-bottom: 6px;
+}
+
+.matria-word {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ctx-bone);
+  font-style: italic;
+  line-height: 1;
+}
+
+.matria-year {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--ctx-muted);
+  margin-top: 6px;
+}
+
+/* ============================================================
+   CREATEX — GALLERY
+   ============================================================ */
+.ctx-gallery-section { background: var(--ctx-bg); }
+
+.ctx-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 10px;
+  margin-bottom: 48px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.ctx-gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--ctx-card);
+}
+
+.ctx-gallery-item.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.ctx-gallery-item.wide {
+  grid-column: span 2;
+}
+
+.ctx-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ctx-gallery-item:hover img { transform: scale(1.06); }
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(201,168,76,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--trans);
+}
+
+.gallery-overlay span {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ctx-gold);
+  background: rgba(17,17,17,0.8);
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--ctx-gold);
+}
+
+.ctx-gallery-item:hover .gallery-overlay { opacity: 1; }
+
+/* Video */
+.ctx-video-wrap {
+  text-align: center;
+}
+
+.ctx-video-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ctx-bone);
+  margin-bottom: 20px;
+}
+
+.ctx-video-container {
+  max-width: 860px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--ctx-border);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+
+.ctx-video-container video {
+  width: 100%;
+  display: block;
+  background: #000;
+}
+
+/* ============================================================
+   CREATEX — CONCLUSION
+   ============================================================ */
+.ctx-conclusion {
+  padding: 80px 0;
+  background: var(--ctx-surface);
+  border-top: 1px solid var(--ctx-border);
+}
+
+.ctx-conclusion-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctx-conclusion-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--ctx-bone);
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.ctx-conclusion-inner > p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(232,213,196,0.7);
+  margin-bottom: 36px;
+}
+
+.ctx-conclusion-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  text-align: left;
+}
+
+.ctx-point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: rgba(232,213,196,0.8);
+  background: var(--ctx-card);
+  border: 1px solid var(--ctx-border);
+  padding: 12px 16px;
+  border-radius: var(--radius);
+}
+
+/* ============================================================
+   CREATEX — FOOTER
+   ============================================================ */
+.ctx-footer {
+  background: #0A0A0A;
+  border-top: 1px solid var(--ctx-border);
+  padding: 24px;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  color: var(--ctx-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.92);
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  cursor: zoom-out;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 0 60px rgba(0,0,0,0.8);
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--trans);
+}
+
+.lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .c50-hero {
+    grid-template-columns: 1fr;
+    padding: 80px 24px 60px;
+    min-height: auto;
+    gap: 32px;
+  }
+
+  .c50-hero-imgs {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .hero-img-card {
+    min-width: 200px;
+    max-width: 200px;
+    height: 140px;
+    transform: none !important;
+  }
+
+  .conf-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 24px;
+  }
+
+  .conf-number { font-size: 2rem; }
+
+  .ctx-hero { padding: 80px 24px 60px; }
+
+  .ctx-about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ctx-matria-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ctx-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ctx-gallery-item.large {
+    grid-column: span 2;
+  }
+
+  .ctx-conclusion-points {
+    grid-template-columns: 1fr;
+  }
+
+  .ctx-stats { gap: 24px; }
+}
+
+@media (max-width: 600px) {
+  .nav-logo-c50, .nav-logo-ctx, .nav-sep { display: none; }
+
+  .c50-title { font-size: 2.8rem; }
+  .ctx-title { font-size: 3rem; }
+
+  .ctx-gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 150px;
+  }
+
+  .matria-circle { width: 140px; height: 140px; }
+  .matria-word { font-size: 1.5rem; }
+
+  .ethics-inner { flex-direction: column; }
+}
